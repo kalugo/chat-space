@@ -30,7 +30,8 @@
       .chat-space__header
         %h2 name
         %p Member
-        .chat-space__header__btn Edit
+        .chat-space__header__btn
+          = link_to "Edit"
       .chat-space__body
         .message
           .message__header
@@ -47,10 +48,11 @@
       .chat-space__form
         .chat-space__form__input-box
           type a message
-          %label.chat-space__form__btn--image
+          %label.chat-space__form__btn--image(for="file")
             = fa_icon "image"
-            %input.hidden{type: "file"}
-        .chat-space__form__btn Send
+            %input.hidden#file{type: "file"}
+        .chat-space__form__btn
+          = link_to "Send"
 
     = yield
 

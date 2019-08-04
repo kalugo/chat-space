@@ -81,7 +81,6 @@
     }
     &__btn{
       height: 40px;
-      color: $btnColor;
       padding: 0 20px;
       line-height: 40px;
       box-sizing: border-box;
@@ -89,6 +88,10 @@
       top: 28px;
       right: 40px;
       border: solid 1px $btnColor;
+      a{
+        text-decoration: none;
+        color: $btnColor;
+      }
     }
   }
 
@@ -143,12 +146,15 @@
       width: 100px;
       height: 50px;
       background-color: $btnColor;
-      color: white;
       padding: 0 30px;
       line-height: 50px;
       position: absolute;
       top: 20px;
       right: 40px;
+      a{
+        text-decoration: none;
+        color: white;
+      }
 
       &--image{
         margin-right: 10px;
