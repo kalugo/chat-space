@@ -7,6 +7,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .flash-box
     .sidebar
       .sidebar__header
         username
@@ -23,5 +24,27 @@
           = link_to '/' do
             %h2 title
             %p first_message
+
+    .chat-space
+      .chat-space__header
+        %h2 name
+        %p Member
+        .chat-space__header__btn Edit
+      .chat-space__body
+        .message
+          .message__header
+            %span.user-name user
+            %span.post-time time
+          .message__text
+            %p text
+        .message
+          .message__header
+            %span.user-name user
+            %span.post-time 2019/08/04(Sat) 18:58:30
+          .message__text
+            %p text
+      .chat-space__form
+        .chat-space__form__input-box
+        .chat-space__form__btn Send
 
     = yield
