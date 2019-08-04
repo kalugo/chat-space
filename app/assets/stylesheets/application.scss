@@ -6,13 +6,12 @@
 .sidebar {
   width: 300px;
   height: 100vh;
-  background-color: #2f3e51;
-  color: #ffffff;
+  color: $SidebarTextColor;
   box-sizing: border-box;
 
-  .sidebar__header{
+  &__header{
     background-color: #253141;
-    color: #ffffff;
+    color: $SidebarTextColor;
     width: 300px;
     height: 100px;
     line-height: 100px;
@@ -20,11 +19,32 @@
     box-sizing: border-box;
   }
 
-    .sidebar__btn{
+    &__btn{
       float: right;
       line-height: 100px;
-      color: #fff;
+      color: $SidebarTextColor;
       margin-left: 4.8px;
     }
+
+    &__body{
+      background-color: #2f3e51;
+      height: calc(100vh - 100px);
+      padding-top: 20px;
+    }
+      .group{
+        padding: 0 20px 40px;
+      }
+        h2{
+          font-size: 15px;
+          font-weight: bold;
+          padding-bottom: 5px;
+          color: $SidebarTextColor;
+        }
+        p{
+          font-size: 11px;
+          font-weight: bold;
+          color: $SidebarTextColor;
+        }
+
 
 }

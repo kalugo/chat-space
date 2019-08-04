@@ -14,5 +14,14 @@
           = fa_icon "cog", class:"sidebar__btn"
         = link_to '/' do
           = fa_icon "edit", class:"sidebar__btn"
-          
+      .sidebar__body
+        .group
+          = link_to '/' do
+            %h2 title
+            %p first_message
+        .group
+          = link_to '/' do
+            %h2 title
+            %p first_message
+
     = yield
