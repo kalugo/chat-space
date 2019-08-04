@@ -7,4 +7,12 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .sidebar
+      .sidebar__header
+        username
+        = link_to '/' do
+          = fa_icon "cog", class:"sidebar__btn"
+        = link_to '/' do
+          = fa_icon "edit", class:"sidebar__btn"
+          
     = yield
