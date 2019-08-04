@@ -6,7 +6,7 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    
+
   %body
     .flash-box
     .sidebar
@@ -46,6 +46,7 @@
             %p text
       .chat-space__form
         .chat-space__form__input-box
+          type a message
           %label.chat-space__form__btn--image
             = fa_icon "image"
             %input.hidden{type: "file"}
