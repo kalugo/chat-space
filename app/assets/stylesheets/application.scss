@@ -1,5 +1,9 @@
-@import "font-awesome";
+
+//CSS Reset
 @import "config/reset";
-@import "./variable";
+
+@import "font-awesome";
+@import "config/colors";
 @import "./index";
-@import "modules/user"
+@import "modules/user";
+@import "modules/flash";
