@@ -1,8 +1,8 @@
 .flash-box
 .sidebar
   .sidebar__header
-    username
-    = link_to '#' do
+    = current_user.name
+    = link_to edit_user_path(current_user) do
       = fa_icon "cog", class:"sidebar__header__btn"
     = link_to '#' do
       = fa_icon "edit", class:"sidebar__header__btn"
