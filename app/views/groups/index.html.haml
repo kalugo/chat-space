@@ -1,0 +1,29 @@
+= render "shared/sidebar"
+
+.chat-space
+  .chat-space__header
+    %h2 name
+    %p Member
+    .chat-space__header__btn
+      = link_to "Edit", "edit_group_path(@group)"
+  .chat-space__body
+    .message
+      .message__header
+        %span.user-name user
+        %span.post-time time
+      .message__text
+        %p text
+    .message
+      .message__header
+        %span.user-name user
+        %span.post-time 2019/08/04(Sat) 18:58:30
+      .message__text
+        %p text
+  .chat-space__form
+    .chat-space__form__input-box
+      type a message
+      %label.chat-space__form__btn--image(for="file")
+        = fa_icon "image"
+        %input.hidden#file{type: "file"}
+    .chat-space__form__btn
+      = link_to "Send", '#'
