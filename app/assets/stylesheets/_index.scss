@@ -90,7 +90,10 @@
     background-color: #fafafa;
     padding: 46px 40px 0;
     box-sizing: border-box;
-
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .message{
       padding-bottom: 40px;
 
@@ -127,35 +130,48 @@
       font-size: 16px;
       line-height: 50px;
       color: $chatColor;
-      padding-left: 10px;
       background-color: white;
+      position: relative;
+      &__text-field{
+        padding-left: 10px;
+        border-style: none;
+        height: 50px;
+        width: 100%;
+        box-sizing: border-box;
+
+      }
+    }
+    &__file--image{
+      position: absolute;
+      right: 0px;
+      top: 0;
+      margin-right: 10px;
+      // float: right;
+      font-size: 24px;
+      line-height: 50px;
+      color: black;
+      cursor: pointer;
+      .hidden{
+        display: none;
+      }
     }
 
     &__btn{
       box-sizing: border-box;
       width: 100px;
       height: 50px;
-      background-color: $btnColor;
-      padding: 0 30px;
-      line-height: 50px;
       position: absolute;
       top: 20px;
       right: 40px;
-      a{
+      &--send{
+        box-sizing: border-box;
+        width: 100px;
+        height: 50px;
+        background-color: $btnColor;
+        padding: 0 30px;
+        line-height: 50px;
         text-decoration: none;
         color: white;
-      }
-
-      &--image{
-        margin-right: 10px;
-        float: right;
-        font-size: 24px;
-        line-height: 50px;
-        color: black;
-        cursor: pointer;
-        .hidden{
-          display: none;
-        }
       }
     }
   }
