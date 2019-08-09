@@ -1,30 +1,24 @@
-
 = render "shared/sidebar"
 
 .chat-space
   .chat-space__header
-    %h2 name
-    %p Member
+    %h2= @group.name
+    %p
+      member : 
+      - @group.users.each do |user|
+        %span= user.name
     .chat-space__header__btn
       = link_to "Edit", "edit_group_path(@group)"
   .chat-space__body
-    .message
-      .message__header
-        %span.user-name user
-        %span.post-time time
-      .message__text
-        %p text
-    .message
-      .message__header
-        %span.user-name user
-        %span.post-time 2019/08/04(Sat) 18:58:30
-      .message__text
-        %p text
+    = render @messages
+  
   .chat-space__form
-    .chat-space__form__input-box
-      type a message
-      %label.chat-space__form__btn--image(for="file")
-        = fa_icon "image"
-        %input.hidden#file{type: "file"}
-    .chat-space__form__btn
-      = link_to "Send", '#'
+    = form_for [@group, @message] do |f| 
+      .chat-space__form__input-box
+        = f.text_field :body, placeholder: "type a message", class: "chat-space__form__input-box__text-field"
+
+        = f.label :image, class:"chat-space__form__file--image" do
+          = fa_icon "image"
+          = f.file_field :image, class: "hidden"
+      .chat-space__form__btn
+        = f.submit "Send", class: "chat-space__form__btn--send"
