@@ -7,7 +7,7 @@
       = fa_icon "edit", class:"sidebar__header__btn"
   .sidebar__body
     - current_user.groups.each do |group|
-      = link_to group_message_index_path(group) do
+      = link_to group_messages_path(group) do
         .group
           %h2= group.name
           %p first_massage
