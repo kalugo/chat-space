@@ -1,0 +1,13 @@
+.sidebar
+  .sidebar__header
+    = current_user.name
+    = link_to edit_user_path(current_user) do
+      = fa_icon "cog", class:"sidebar__header__btn"
+    = link_to new_group_path do
+      = fa_icon "edit", class:"sidebar__header__btn"
+  .sidebar__body
+    - current_user.groups.each do |group|
+      = link_to group_message_index_path(group) do
+        .group
+          %h2= group.name
+          %p first_massage

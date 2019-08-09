@@ -1,19 +1,5 @@
-.sidebar
-  .sidebar__header
-    = current_user.name
-    = link_to edit_user_path(current_user) do
-      = fa_icon "cog", class:"sidebar__header__btn"
-    = link_to new_group_path do
-      = fa_icon "edit", class:"sidebar__header__btn"
-  .sidebar__body
-    .group
-      = link_to '#' do
-        %h2 title
-        %p first_message
-    .group
-      = link_to '#' do
-        %h2 title
-        %p first_message
+
+= render "shared/sidebar"
 
 .chat-space
   .chat-space__header
