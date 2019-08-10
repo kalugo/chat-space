@@ -10,4 +10,4 @@
       = link_to group_messages_path(group) do
         .group
           %h2= group.name
-          %p first_massage
+          %p= group.show_last_message
