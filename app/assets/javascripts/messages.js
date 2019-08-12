@@ -8,7 +8,7 @@ $(function(){
     </div>
     <div class="message__text">
     <p>${message.body}</p>
-    <img src=${message.image}>
+    <img src=${message.image} >
     </div>
     </div>`
     return html
@@ -28,8 +28,7 @@ $(function(){
     .done(function(message){
       var messages = $(".chat-space__body");
       messages.append(buildHTML(message));
-      $(".chat-space__form__input-box__text-field").val("");
-      $("#message_image").val("");
+      $("#new_message")[0].reset();
     })
     .fail(function() {
       alert('error');
