@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   function buildHTML(message){
     var html = 
     `<div class="message">
@@ -35,5 +35,5 @@ $(function(){
     })
     $('.chat-space__body').animate({scrollTop: $(".chat-space__body")[0].scrollHeight});
     return false;
-  })
+  });
 });

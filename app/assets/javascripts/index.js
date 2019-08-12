@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   function buildHTML(user){
     var html = `
     <div class="chat-group-user clearfix">
@@ -48,6 +48,4 @@ $(function(){
   $(".chat-group-form__field--right").eq(2).on("click",".chat-group-user__btn--remove",function(){
     $(this).parent().remove();
   })
-
-
 });
