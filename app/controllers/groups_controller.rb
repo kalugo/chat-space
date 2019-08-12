@@ -24,8 +24,9 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
+    binding.pry
     if @group.update(create_params)
-      redirect_to group_messages_index_path(@group), notice: 'グループを編集しました'
+      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
     else
       render :edit
     end
