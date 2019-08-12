@@ -8,25 +8,28 @@ $(function(){
     </div>
     <div class="message__text">
     <p>${message.body}</p>
-    
+    <img src=${message.image}>
     </div>
     </div>`
     return html
   }
   $("#new_message").on('submit',function(e){
     e.preventDefault();
-    var body = $(".chat-space__form__input-box__text-field").val();
+    var formData = new FormData(this);
     var url = $(this).attr("action");
     $.ajax({
       url: url,
       type: 'POST',
-      data: {message: {body: body} },
-      dataType: "json"
+      data: formData,
+      dataType: "json",
+      processData: false,
+      contentType: false
     })
     .done(function(message){
       var messages = $(".chat-space__body");
       messages.append(buildHTML(message));
       $(".chat-space__form__input-box__text-field").val("");
+      $("#message_image").val("");
     })
     .fail(function() {
       alert('error');
