@@ -21,13 +21,15 @@
     }
   }
 
-
-
   &__body{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding-top: 20px;
     box-sizing: border-box;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .group{
       padding: 0 20px 40px;
