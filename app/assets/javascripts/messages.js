@@ -47,7 +47,6 @@ $(document).on('turbolinks:load', function() {
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log("OK")
       if(messages.length !== 0){
         var insertHTML = '';
         messages.forEach(function(message) {
@@ -63,7 +62,7 @@ $(document).on('turbolinks:load', function() {
       }
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   }
   var pattern = new RegExp("groups/\\d\\d/messages")
