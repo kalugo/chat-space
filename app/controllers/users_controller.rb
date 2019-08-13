@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def index
     keyword = params[:keyword]
-    @users = User.where('name LIKE(?)', "%#{keyword}%")
+    @users = User.where('name LIKE(?)', "%#{keyword}%").where.not(id: current_user.id)
   end
 
   def edit
