@@ -1,6 +1,6 @@
 .message
   .message__header
-    %span.user-name= message.user.name
+    %span.user-name{ data:{message_id: message.id}}= message.user.name
     %span.post-time= message.created_at.strftime("%Y/%m/%d %H:%M")
   .message__text
     -if message.body.present?
