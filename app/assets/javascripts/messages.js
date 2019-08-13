@@ -57,9 +57,6 @@ $(document).on('turbolinks:load', function() {
         messages.append(insertHTML);
         $('.chat-space__body').animate({scrollTop: $(".chat-space__body")[0].scrollHeight});
       }
-      else{
-        console.log("nothing")
-      }
     })
     .fail(function() {
       alert('error');
