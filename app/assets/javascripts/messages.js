@@ -62,7 +62,7 @@ $(document).on('turbolinks:load', function() {
       alert('error');
     });
   }
-  var pattern = new RegExp("groups/\\d\\d/messages")
+  var pattern = new RegExp("groups/\\d*/messages")
   if(document.URL.match(pattern)) {
     setInterval(reloadMessages, 5000);
   }
