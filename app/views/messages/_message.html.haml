@@ -1,7 +1,7 @@
 .message
   .message__header
     %span.user-name{ data:{message_id: message.id}}= message.user.name
-    %span.post-time= message.created_at.strftime("%Y/%m/%d %H:%M")
+    %span.post-time= message.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M")
   .message__text
     -if message.body.present?
       %p= message.body
